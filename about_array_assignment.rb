@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 class AboutArrayAssignment < Neo::Koan
   def test_non_parallel_assignment
     names = %w(John Smith)
-    assert_equal ['John', 'Smith'], names
+    assert_equal %w(John Smith), names
   end
 
   def test_parallel_assignments
@@ -22,7 +22,7 @@ class AboutArrayAssignment < Neo::Koan
   def test_parallel_assignments_with_splat_operator
     first_name, *last_name = %w(John Smith III)
     assert_equal 'John', first_name
-    assert_equal ['Smith', 'III'], last_name
+    assert_equal %w(Smith III), last_name
   end
 
   def test_parallel_assignments_with_too_few_variables
@@ -34,7 +34,7 @@ class AboutArrayAssignment < Neo::Koan
   def test_parallel_assignments_with_subarrays
     first_name = %w(Willie Rae)
     last_name = 'Johnson'
-    assert_equal ['Willie', 'Rae'], first_name
+    assert_equal %w(Willie Rae), first_name
     assert_equal 'Johnson', last_name
   end
 
